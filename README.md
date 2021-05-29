@@ -1,24 +1,79 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+## users テーブル
 
-* Ruby version
+| Column                    | Type   | Options                   |
+| ------------------------- | ------ | ------------------------- |
+| name                      | string | null: false               |
+| email                     | string | null: false, unique: true |
+| encrypted_password        | string | null: false               |
 
-* System dependencies
+### Association
+- has_many :likes
+- has_many :reviews
+- has_many :hotels
 
-* Configuration
+## hotelsテーブル
 
-* Database creation
+| Column      | Type   | Options     |
+| ----------- | ------ | ------------|
+| name        | string | null: false |
+| category_id | int    | null: false |
 
-* Database initialization
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- has_many :reviews
+- has_many :tags, through: hotel_tags
+- has_many :hotel_tags
 
-* Services (job queues, cache servers, search engines, etc.)
+## reviewsテーブル
 
-* Deployment instructions
+| Column        | Type       | Options  
+| ------------- | ---------- | ------------------------------ |
+| comment       | text       |                                |
+| user          | references | null: false, foreign_key: true |
+| hotel         | references | null: false, foreign_key: true |
+| total_score   | int        | null: false                    |
 
-* ...
+
+### Association
+- has_many :likes
+- belongs_to :user
+- belongs_to :hotel
+
+## likesテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| review | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :review
+
+## tagsテーブル
+
+| Column      | Type   | Options     |
+| ----------- | ------ | ----------- |
+| category_id | int    | null: false |
+
+
+### Association
+- has_many :hotels, through: hotel_tags
+- has_many :hotel_tags
+
+
+## hotel_tags
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| hotel  | references | null: false, foreign_key: true |
+| tag    | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :hotel
+- belongs_to :tag
