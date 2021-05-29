@@ -4,11 +4,11 @@
 
 ## users テーブル
 
-| Column                    | Type   | Options     |
-| ------------------------- | ------ | ----------- |
-| nickname                  | string | null: false |
-| email                     | string | null: false |
-| encrypted_password        | string | null: false |
+| Column                    | Type   | Options                   |
+| ------------------------- | ------ | ------------------------- |
+| name                      | string | null: false               |
+| email                     | string | null: false, unique: true |
+| encrypted_password        | string | null: false               |
 
 ### Association
 - has_many :likes
@@ -17,9 +17,10 @@
 
 ## hotelsテーブル
 
-| Column | Type   | Options     |
-| -------| ------ | ------------|
-| name   | string | null: false |
+| Column      | Type   | Options     |
+| ----------- | ------ | ------------|
+| name        | string | null: false |
+| category_id | int    | null: false |
 
 
 ### Association
@@ -56,9 +57,9 @@
 
 ## tagsテーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
+| Column      | Type   | Options     |
+| ----------- | ------ | ----------- |
+| category_id | int    | null: false |
 
 
 ### Association
