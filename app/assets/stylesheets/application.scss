@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+
+ @import "bulma";
+
+ body {
+  min-height: 100vh;
+  color: white;
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+  font-family: sans-serif;
+}
