@@ -11,6 +11,42 @@
   </head>
 
   <body>
+    <header class="header">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <p class="navbar-item">
+            <%= link_to root_path do %>
+              <i class="fas fa-plane-departure black"></i>
+              <strong class="is-size-3" style="font-family: cursive; color: black;">accommodation review</strong>
+            <% end %>
+          </p>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <%= link_to root_path, class: "navbar-item" do %>
+            宿泊施設一覧
+          <% end %>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <% if user_signed_in? %>
+              <p class="navbar-item">ようこそ <%= current_user.name %> さん</p>
+            <% end %>
+            <div class="buttons">
+              <% if user_signed_in? %>
+                <div class="nav__right">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :button %>
+                <%= link_to "新規レビュー", root_path, class: :button %>
+               </div>
+              <% else %>
+                <div class="nav__right">
+                <%= link_to "ログイン", new_user_session_path, class: :button %>
+                <%= link_to "ユーザー登録", new_user_registration_path, class: :button %>
+                </div>
+              <% end %>
+            </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
