@@ -1,0 +1,28 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <%= form_with model: @user,url: user_session_path,class: 'registration-main', local: true do |f| %>
+        <h1 class='form-header-text'>
+        ユーザーログイン
+        </h1>
+
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, id:"user_email", autocomplete: "email", placeholder: "Eメールアドレス", class: "input" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, autofocus: true, id:"user_password", autocomplete: "current-password",placeholder: "半角英数パスワード(6文字以上)", class: "input" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Log in", class: "button is-success" %>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

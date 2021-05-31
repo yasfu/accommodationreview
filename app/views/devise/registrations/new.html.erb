@@ -1,0 +1,40 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+        <h1 class="form-header-text">
+        ユーザー新規登録
+        </h1>
+
+        <%= render 'shared/error_messages', model: f.object %>
+
+        <div class="field">
+          <%= f.label :name, "ユーザー名(必須)" %><br />
+            <%= f.text_field :name, autofocus: true, placeholder: "ユーザー名", class:"input", id:"user_name", maxlength:"40" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, "メールアドレス(必須)" %><br />
+            <%= f.email_field :email, autofocus: true, id:"user_email", autocomplete: "email", placeholder: "Eメールアドレス", class:"input" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（必須）" %><br />
+            <%= f.password_field :password, autofocus: true, id:"user_password", autocomplete: "new-password", placeholder: "半角英数パスワード(6文字以上)", class:"input"%>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード再入力(必須)" %><br />
+            <%= f.password_field :password_confirmation, autofocus: true, id:"user_password_confirmation", autocomplete: "new-password", placeholder: "半角英数パスワード(6文字以上)", class:"input" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "新規登録" ,class:"button is-success" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
