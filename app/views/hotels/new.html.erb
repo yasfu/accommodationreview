@@ -1,0 +1,23 @@
+<section class="section mt-6">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_with model: @hotel, url:hotels_path, local: true do |f| %>
+
+        <%= render "shared/error_messages", model: f.object %>
+
+        <p class="form-header-text is-size-4 has-text-centered">宿泊施設を投稿する<p>
+        <div class="field">
+          <%= f.text_field :name, class:"input", placeholder:"宿泊施設名" %>
+        </div>
+        <div class="field has-text-centered">
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+        </div>
+        <div class="actions mt-6 has-text-centered">
+          <%= f.submit "投稿する" ,class:"button is-success" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<section>

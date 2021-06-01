@@ -21,12 +21,6 @@
             <% end %>
           </p>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <%= link_to root_path, class: "navbar-item" do %>
-            宿泊施設一覧
-          <% end %>
-        </div>
         <div class="navbar-end">
           <div class="navbar-item">
             <% if user_signed_in? %>
@@ -36,7 +30,7 @@
               <% if user_signed_in? %>
                 <div class="nav__right">
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :button %>
-                <%= link_to "新規レビュー", root_path, class: :button %>
+                <%= link_to "新規レビュー", new_hotel_path, class: :button %>
                </div>
               <% else %>
                 <div class="nav__right">
