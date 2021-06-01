@@ -3,7 +3,13 @@
     <div class="columns is-centered">
       <div class="column is-5">
         <%= form_with model: @user,url: user_session_path,class: 'registration-main', local: true do |f| %>
-        <h1 class='form-header-text'>
+
+        <div class="has-text-centered error-alert">
+          <%= flash[:notice] %>
+          <%= flash[:alert] %>
+        </div>
+
+        <h1 class="field has-text-centered is-size-4">
         ユーザーログイン
         </h1>
 
