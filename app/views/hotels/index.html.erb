@@ -1,2 +1,32 @@
-<h1>Hotels#index</h1>
-<p>Find me in app/views/hotels/index.html.erb</p>
+<section class="section mt-6">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <p class="form-header-text is-size-4 has-text-centered">宿泊施設一覧</p>
+        <% @hotels.each do |hotel|%>
+        <div class="card mb-6">
+          <header class="card-header">
+            <p class="card-header-title">
+              <%= hotel.name %>
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <div class="content average-score">
+                <div class="star-rating mb-2">
+                  <div class="star-rating-front" style="width: %">★★★★★</div>
+                  <div class="star-rating-back">★★★★★</div>
+                </div>
+                <div class="average-score-display ml-3 pt-2">
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="card-footer">
+          </footer>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
