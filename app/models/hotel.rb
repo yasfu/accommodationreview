@@ -1,6 +1,7 @@
 class Hotel < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
+  #has_many :reviews, dependent: destroy
 
   validates :name, presence: true
 
