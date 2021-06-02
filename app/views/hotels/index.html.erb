@@ -15,15 +15,22 @@
             <div class="content">
               <div class="content average-score">
                 <div class="star-rating mb-2">
-                  <div class="star-rating-front" style="width: %">★★★★★</div>
+                  <div class="star-rating-front" style="width: <%= hotel.review_score_percentage %>%">★★★★★</div>
                   <div class="star-rating-back">★★★★★</div>
                 </div>
                 <div class="average-score-display ml-3 pt-2">
+                  <%= hotel.avg_score %>点（<%= hotel.reviews.count %>件のレビュー）
                 </div>
               </div>
             </div>
           </div>
           <footer class="card-footer">
+            <%= link_to hotel_reviews_path(hotel), class: "button card-footer-item" do %>
+                レビューを見る
+              <% end %>
+              <%= link_to hotel_path(hotel), class: "button card-footer-item" do %>
+                レビューを書く
+              <% end %>
           </footer>
         </div>
         <% end %>
