@@ -11,7 +11,7 @@ class HotelsController < ApplicationController
   def create
     @hotel = Hotel.new(hotel_params)
     if @hotel.save
-      redirect_to root_path
+      redirect_to hotel_path(@hotel)
     else
       render :new
     end
