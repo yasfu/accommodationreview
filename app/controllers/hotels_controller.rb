@@ -1,5 +1,6 @@
 class HotelsController < ApplicationController
   def index
+    @hotels = Hotel.all
     @hotels = Hotel.order("created_at DESC")
   end
 
