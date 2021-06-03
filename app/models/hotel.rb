@@ -2,6 +2,7 @@ class Hotel < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   has_many :reviews
+  has_one_attached :image
 
   def avg_score
     unless self.reviews.empty?
