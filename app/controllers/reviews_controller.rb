@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @hotel = Hotel.find(params[:hotel_id])
     @reviews = @hotel.reviews
@@ -17,6 +18,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:hotel_id, :total_score, :comment)
+    params.require(:review).permit( :total_score, :comment).merge(user_id: current_user.id,hotel_id: params[:hotel_id])
   end
 end

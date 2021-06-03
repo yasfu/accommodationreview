@@ -1,4 +1,5 @@
 class HotelsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @hotels = Hotel.all
     @hotels = Hotel.order("created_at DESC")
