@@ -20,7 +20,10 @@ class Hotel < ApplicationRecord
     end
   end
 
-  validates :name, presence: true
+  with_options presence: true do
+    validates :image
+    validates :name
+  end
 
   validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
 end

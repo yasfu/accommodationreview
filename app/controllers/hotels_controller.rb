@@ -2,7 +2,7 @@ class HotelsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
     @hotels = Hotel.all
-    @hotels = Hotel.order("created_at DESC")
+    @hotel = Hotel.order("created_at DESC")
   end
 
   def new
@@ -15,6 +15,19 @@ class HotelsController < ApplicationController
       redirect_to hotel_path(@hotel)
     else
       render :new
+    end
+  end
+
+  def edit
+    @hotel = Hotel.find(params[:id])
+  end
+
+  def update
+    @hotel = Hotel.find(params[:id])
+    if @hotel.update(hotel_params)
+    redirect_to root_path
+    else
+    render :edit
     end
   end
 

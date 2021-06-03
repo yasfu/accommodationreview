@@ -6,10 +6,12 @@
         <% @hotels.each do |hotel|%>
         <div class="card mb-6">
           <header class="card-header">
-            <p class="card-header-title">
-              <%= hotel.name %>
-              <%= ":#{hotel.category.name}"%>   
-            </p>
+            <%= link_to edit_hotel_path(hotel) do %>
+              <p class="card-header-title">
+                <%= hotel.name %>
+                <%= ":#{hotel.category.name}"%>   
+              </p>
+            <% end %>
           </header>
           <div class="card-content mb-3">
             <%= image_tag(hotel.image, class: :card__img)if hotel.image.attached? %>
