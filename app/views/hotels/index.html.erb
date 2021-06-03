@@ -11,7 +11,8 @@
               <%= ":#{hotel.category.name}"%>   
             </p>
           </header>
-          <div class="card-content mt-6 mb-3">
+          <div class="card-content mb-3">
+            <%= image_tag(hotel.image, class: :card__img)if hotel.image.attached? %>
             <div class="content">
               <div class="content average-score">
                 <div class="star-rating mb-2">

@@ -9,7 +9,8 @@
               <%= ":#{@hotel.category.name}"%>
             </p>
           </header>
-          <div class="card-content mt-6 mb-3">
+          <div class="card-content mb-3">
+            <%= image_tag @hotel.image %>
             <div class="content average-score">
               <div class="star-rating mb-2">
                 <div class="star-rating-front" style="width: <%= @hotel.review_score_percentage %>%">★★★★★</div>

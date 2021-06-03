@@ -6,12 +6,20 @@
 
         <%= render "shared/error_messages", model: f.object %>
 
-        <p class="form-header-text is-size-4 has-text-centered">宿泊施設を投稿する<p>
+        <p class="form-header-text is-size-1 has-text-centered">宿泊施設を投稿する<p>
         <div class="field">
           <%= f.text_field :name, class:"input", placeholder:"宿泊施設名" %>
         </div>
         <div class="field has-text-centered">
           <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
+        </div>
+        <div class="field is-size-6 has-text-centered">
+        <p>
+          クリックしてファイルをアップロード(任意)
+          <div>
+            <%= f.file_field :image, id:"hotel-image" %>
+          </div>
+        </p>
         </div>
         <div class="actions mt-6 has-text-centered">
           <%= f.submit "投稿する" ,class:"button is-success" %>
