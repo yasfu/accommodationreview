@@ -18,6 +18,19 @@ class HotelsController < ApplicationController
     end
   end
 
+  def edit
+    @hotel = Hotel.find(params[:id])
+  end
+
+  def update
+    @hotel = Hotel.find(params[:id])
+    if @hotel.update(hotel_params)
+    redirect_to prototype_path
+    else
+    render :edit
+    end
+  end
+
   def show
     @hotel = Hotel.find(params[:id])
     @review = Review.new
