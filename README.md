@@ -26,7 +26,6 @@
 ### Association
 - belongs_to :user
 - has_many :reviews
-- has_many :tags, through: hotel_tags
 - has_many :hotel_tags
 
 ## reviewsテーブル
@@ -55,25 +54,3 @@
 - belongs_to :user
 - belongs_to :review
 
-## tagsテーブル
-
-| Column      | Type   | Options     |
-| ----------- | ------ | ----------- |
-| category_id | int    | null: false |
-
-
-### Association
-- has_many :hotels, through: hotel_tags
-- has_many :hotel_tags
-
-
-## hotel_tags
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| hotel  | references | null: false, foreign_key: true |
-| tag    | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :hotel
-- belongs_to :tag
