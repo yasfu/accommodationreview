@@ -1,5 +1,6 @@
 class HotelsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :search_hotel, only: [:index, :search]
   def index
     @hotels = Hotel.all
     @hotel = Hotel.order("created_at DESC")
@@ -36,9 +37,17 @@ class HotelsController < ApplicationController
     @review = Review.new
   end
 
+  def search
+    @hotels = @p.result
+  end
+
   private
 
   def hotel_params
     params.require(:hotel).permit(:name, :category_id, :image)
+  end
+
+  def search_hotel
+    @p = Hotel.ransack(params[:q])
   end
 end
