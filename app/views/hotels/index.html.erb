@@ -2,18 +2,11 @@
 <h1 class="columns is-centered form-header-text is-size-5">
   宿泊施設検索
 </h1>
-<div class="form-header-text has-text-centered is-size-5">
+<div class="form-header-text has-text-centered">
   <%= search_form_for @p, url: hotels_search_path do |f| %>
-  <div>
     <%= f.label :category_id_eq, 'カテゴリー検索' %>
     <%= f.collection_select :category_id_eq, Category.all,:id,:name,{class:"category-select"} %>
     <%= f.submit '検索' %>
-  </div>
-  <div>
-    <%= f.label :name_cont, '宿泊施設名検索' %>
-    <%= f.search_field :name_cont, class: "search-input" %>
-    <%= f.submit '検索' %>
-  </div>
   <% end %>
 </div>
   <div class="container">  
