@@ -63,3 +63,8 @@ gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
 gem 'ransack'
 gem 'kaminari'
+
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth', '~>1.9.1'
