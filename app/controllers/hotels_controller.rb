@@ -2,7 +2,7 @@ class HotelsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :search_hotel, only: [:index, :search]
   def index
-    @hotels = Hotel.all
+    @hotels = Hotel.all.page(params[:page]).per(5)
     @hotel = Hotel.order("created_at DESC")
   end
 
@@ -39,6 +39,7 @@ class HotelsController < ApplicationController
 
   def search
     @hotels = @p.result
+    @hotels = @hotels.page(params[:page])
   end
 
   private
