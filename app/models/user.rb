@@ -10,7 +10,6 @@ class User < ApplicationRecord
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers'
   
   has_many :sns_credentials
-  has_many :likes
   has_many :reviews
   has_many :hotels
 
