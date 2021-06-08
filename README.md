@@ -2,6 +2,17 @@
 
 # テーブル設計
 
+## sns_credentials テーブル
+
+| Column                    | Type       | Options                        |
+| ------------------------- | ---------- | ------------------------------ |
+| provider                  | string     | null: false                    |
+| uid                       | string     | null: false                    |
+| user                      | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+
 ## users テーブル
 
 | Column                    | Type   | Options                   |
@@ -14,6 +25,7 @@
 - has_many :likes
 - has_many :reviews
 - has_many :hotels
+- has_many :sns_credentials
 
 ## hotelsテーブル
 
