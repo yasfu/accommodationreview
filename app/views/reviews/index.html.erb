@@ -37,6 +37,8 @@
                 <td><%= review.comment %></td>
                 <% if user_signed_in? && current_user.id == review.user_id %>
                   <td><%= link_to "削除", hotel_review_path(review.hotel.id, review.id), method: :delete%></td>
+                <% else %>
+                <td></td>
                 <% end %>
               </tr>
             <% end %>
