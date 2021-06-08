@@ -22,7 +22,6 @@
 | encrypted_password        | string | null: false               |
 
 ### Association
-- has_many :likes
 - has_many :reviews
 - has_many :hotels
 - has_many :sns_credentials
@@ -51,18 +50,7 @@
 
 
 ### Association
-- has_many :likes
 - belongs_to :user
 - belongs_to :hotel
 
-## likesテーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| review | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user
-- belongs_to :review
 
