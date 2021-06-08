@@ -5,10 +5,12 @@
         <p class= "form-header-text is-size-4 has-text-centered">宿泊施設レビュー</p>
         <div class="card mb-6">
           <header class="card-header">
-            <p class="card-header-title">
-              <%= @hotel.name %>
-              <%= ":#{@hotel.category.name}"%>
-            </p>
+            <%= link_to edit_hotel_path(@hotel) do %>
+              <p class="card-header-title">
+                <%= @hotel.name %>
+                <%= ":#{@hotel.category.name}"%>
+              </p>
+            <% end %>
           </header>
           <div class="card-content mb-3">
             <%= image_tag @hotel.image %>
