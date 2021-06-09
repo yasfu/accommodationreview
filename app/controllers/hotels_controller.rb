@@ -3,7 +3,7 @@ class HotelsController < ApplicationController
   before_action :search_hotel, only: [:index, :search]
   def index
     @hotels = Hotel.all.page(params[:page]).per(5)
-    @hotel = Hotel.order("created_at DESC")
+    @hotel = Hotel.order('created_at DESC')
   end
 
   def new
@@ -26,9 +26,9 @@ class HotelsController < ApplicationController
   def update
     @hotel = Hotel.find(params[:id])
     if @hotel.update(hotel_params)
-    redirect_to root_path
+      redirect_to root_path
     else
-    render :edit
+      render :edit
     end
   end
 

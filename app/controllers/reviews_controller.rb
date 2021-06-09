@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
       redirect_to hotel_reviews_path(@review.hotel)
     else
       @hotel = Hotel.find(params[:hotel_id])
-      render "hotels/show"
+      render 'hotels/show'
     end
   end
 
@@ -20,13 +20,13 @@ class ReviewsController < ApplicationController
     @hotel = Hotel.find(params[:hotel_id])
     @review = @hotel.reviews.find(params[:id])
     @review.destroy
-    if
-      redirect_to hotel_reviews_path(@review.hotel)
+    if redirect_to hotel_reviews_path(@review.hotel)
     end
   end
 
   private
+
   def review_params
-    params.require(:review).permit( :total_score, :comment).merge(user_id: current_user.id,hotel_id: params[:hotel_id])
+    params.require(:review).permit(:total_score, :comment).merge(user_id: current_user.id, hotel_id: params[:hotel_id])
   end
 end

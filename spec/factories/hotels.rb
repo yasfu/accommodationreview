@@ -5,7 +5,5 @@ FactoryBot.define do
     after(:build) do |hotel|
       hotel.image.attach(io: File.open('public/images/test_image.jpg'), filename: 'test_image.jpg')
     end
-
-    
   end
 end
