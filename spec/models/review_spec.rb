@@ -25,12 +25,12 @@ RSpec.describe Review, type: :model do
       it 'hotelが紐付いていないと保存できないこと' do
         @review.hotel = nil
         @review.valid?
-        expect(@review.errors.full_messages).to include("Hotel must exist")
+        expect(@review.errors.full_messages).to include('Hotel must exist')
       end
       it 'userが紐付いていないと保存できないこと' do
         @review.user = nil
         @review.valid?
-        expect(@review.errors.full_messages).to include("User must exist")
+        expect(@review.errors.full_messages).to include('User must exist')
       end
     end
   end
