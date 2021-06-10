@@ -173,7 +173,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 ## 使用gem一覧
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
@@ -228,22 +227,31 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'bulma-rails'
+
 gem 'devise'
+
 gem 'active_hash'
 
 gem 'mini_magick'
+
 gem 'image_processing', '~> 1.2'
+
 gem 'pry-rails'
+
 gem 'ransack'
+
 gem 'kaminari'
 
 gem 'omniauth-facebook'
+
 gem 'omniauth-google-oauth2'
+
 gem "omniauth-rails_csrf_protection"
+
 gem 'omniauth', '~>1.9.1'
 
 gem "aws-sdk-s3", require: false
 
-group :development do
-  gem 'rubocop', require: false
+group :development do<br>
+  gem 'rubocop', require: false<br>
 end
