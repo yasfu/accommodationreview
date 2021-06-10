@@ -3,7 +3,7 @@ class HotelsController < ApplicationController
   before_action :search_hotel, only: [:index, :search]
   def index
     @hotels = Hotel.all.page(params[:page]).per(5)
-    @hotel = Hotel.order('created_at DESC')
+    @hotel = Hotel
   end
 
   def new
