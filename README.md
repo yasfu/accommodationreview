@@ -89,7 +89,7 @@ SNSユーザーログイン(test testさんの場合)
 [![Image from Gyazo](https://i.gyazo.com/af9fc41581b78481981a1ad5a44f454a.gif)](https://gyazo.com/af9fc41581b78481981a1ad5a44f454a)
 
 カテゴリー検索
-[![Image from Gyazo](https://i.gyazo.com/246486382ca4c0b0cef63441df4aae8b.gif)](https://gyazo.com/246486382ca4c0b0cef63441df4aae8b)
+[![Image from Gyazo](https://i.gyazo.com/a7350c97ff719d4f2b17c06c59c92aa7.gif)](https://gyazo.com/a7350c97ff719d4f2b17c06c59c92aa7)
 
 ページネーション機能(投稿数が５件を超えると次のページが生成され、遷移できるようになる。)
 [![Image from Gyazo](https://i.gyazo.com/2318db9f26c55b9472503942ce1d6db6.gif)](https://gyazo.com/2318db9f26c55b9472503942ce1d6db6)
