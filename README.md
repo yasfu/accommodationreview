@@ -92,7 +92,7 @@ SNSユーザーログイン(test testさんの場合)
 [![Image from Gyazo](https://i.gyazo.com/a7350c97ff719d4f2b17c06c59c92aa7.gif)](https://gyazo.com/a7350c97ff719d4f2b17c06c59c92aa7)
 
 ページネーション機能(投稿数が５件を超えると次のページが生成され、遷移できるようになる。)
-[![Image from Gyazo](https://i.gyazo.com/2318db9f26c55b9472503942ce1d6db6.gif)](https://gyazo.com/2318db9f26c55b9472503942ce1d6db6)
+[![Image from Gyazo](https://i.gyazo.com/8bb3f0cbf3e160d7b989fe8b093407b2.gif)](https://gyazo.com/8bb3f0cbf3e160d7b989fe8b093407b2)
 
 ## モデル単体テストコードGyazo
 
